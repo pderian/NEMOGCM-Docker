@@ -38,8 +38,8 @@ It contains:
 1. Source setup on the host
 
 a) Download the sources for NEMOCGM, XIOS 1.0 and XIOS 2.0 in a SRC subdirectory.
-[!] Note: an account is mandatory, see the NEMO website [1].
-[!] Note: with NEMO version "nemo_v3_6_STABLE", use xios-1.0 revision 703 [2].
+/!\ Note: an account is mandatory, see the NEMO website [1].
+/!\ Note: with NEMO version "nemo_v3_6_STABLE", use xios-1.0 revision 703 [2].
 
 mkdir SRC; cd SRC
 svn --username 'my_login' --password 'my_password' co http://forge.ipsl.jussieu.fr/nemo/svn/branches/2015/nemo_v3_6_STABLE/NEMOGCM
@@ -67,7 +67,7 @@ cd Docker; docker build -t nemo/compiler .
 ----------------
 3. Start an interactive container sharing the source files as a Volume.
 This way the host SRC will be available from within the container as /SRC.
-[!] Note: /host/path/to/SRC must be the _absolute_ path to the host SRC directory 
+/!\ Note: /host/path/to/SRC must be the _absolute_ path to the host SRC directory 
 (at least on Mac OS X). 
 
 docker run -v /host/path/to/SRC:/SRC -t -i nemo/compiler /bin/bash
@@ -75,7 +75,7 @@ docker run -v /host/path/to/SRC:/SRC -t -i nemo/compiler /bin/bash
 ----------------
 4. Compile XIOS.
 This compilation takes a while, but is done once and for all.
-[!] Note: from here on, until mentioned otherwise, all commands are executed within
+/!\ Note: from here on, unless mentioned otherwise, all commands are executed within
 the container.
 
 cd /SRC/XIOS
@@ -83,7 +83,7 @@ cd /SRC/XIOS
 
 ----------------
 5. Create default NEMO configurations, compile and enjoy.
-[!] Note: here, the compilation command depends on the configuration as well as the
+/!\ Note: here, the compilation command depends on the configuration as well as the
 setup. Please refer to NEMO website for more information.
 In particular, the key "key_xios2" must be added if XIOS 2.0 was chosen (not recommended with nemo_v3_6_STABLE).
 Here is an example with the GYRE (and xios 1.0).
