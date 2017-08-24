@@ -15,7 +15,11 @@ and the container.
 The container is only used to (i) compile and (ii) run the NEMO engine. 
 
 Tested successfully on Mac OS X 10.11.5
-with Docker version 1.12.0-rc2, build 906eacd, experimental
+with Docker version >= 1.12.0-rc2, build 906eacd, experimental
+
+References:
+[1] http://forge.ipsl.jussieu.fr/nemo/wiki/Users
+[2] http://forge.ipsl.jussieu.fr/nemo/wiki/Users/ModelInterfacing/InputsOutputs#ExtractingandinstallingXIOS
 
 -----------
 0. Preamble
@@ -31,12 +35,13 @@ It contains:
 1. Source setup on the host
 
 a) Download the sources for NEMOCGM, XIOS 1.0 and XIOS 2.0 in a SRC subdirectory.
-Note: an account is mandatory, see the NEMO website.
+[!] Note: an account is mandatory, see the NEMO website [1].
+[!] Note: with NEMO version "nemo_v3_6_STABLE", use xios-1.0 revision 703 [2].
 
 mkdir SRC; cd SRC
 svn --username 'my_login' --password 'my_password' co http://forge.ipsl.jussieu.fr/nemo/svn/branches/2015/nemo_v3_6_STABLE/NEMOGCM
 svn co -r 703 http://forge.ipsl.jussieu.fr/ioserver/svn/XIOS/branchs/xios-1.0 xios-1.0
-svn co -r 819 http://forge.ipsl.jussieu.fr/ioserver/svn/XIOS/trunk xios-2.0
+svn co -r 990 http://forge.ipsl.jussieu.fr/ioserver/svn/XIOS/trunk xios-2.0
 
 b) Create a symlink for XIOS 1.0 or 2.0.
 This should create a XIOS directory at the same level as NEMOGCM, xios-1.0
@@ -84,6 +89,6 @@ cd /SRC/NEMOGCM/CONFIG
 # to compile
 ./makenemo -v 3 –m DEBIAN –r GYRE -n MYGYRE 
 # to run
-cd MYGYRE/EXP00; mpirun ./opa
+cd MYGYRE/EXP00; mpirun -np XXX ./opa
 # at the end of the run, output files are available in the current directory
 # as well as simultaneously available on the host.
