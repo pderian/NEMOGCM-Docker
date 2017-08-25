@@ -92,7 +92,7 @@ cd /SRC/NEMOGCM/CONFIG
 # to compile
 ./makenemo -v 3 –m DEBIAN –r GYRE -n MY_GYRE 
 # to run
-cd MYGYRE/EXP00; mpirun ./opa
+cd MY_GYRE/EXP00; mpirun ./opa
 # at the end of the run, output files are available in the current directory
 # as well as simultaneously available on the host.
 
@@ -104,6 +104,7 @@ The clocks of docker container and host machine may not be synced if a NTP serve
 "make: warning:  Clock skew detected.  Your build may be incomplete."
 When it happens, a workaround is to run on the host (see [4], "Known Issues"):
 docker run --rm --privileged alpine hwclock -s
+This re-sync the clocks.
 
 - Regarding MPI:
 Docker can use several cores depending on the host machine and Docker configuration, see Docker Preferences > Advanced > CPUs.
