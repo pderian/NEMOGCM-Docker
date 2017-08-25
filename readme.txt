@@ -26,7 +26,7 @@ References:
 
 -----------
 0. Preamble
-The following assumes that NEMO is the current directory.
+The following assumes that the current directory is the root project directory (e.g. NEMOGCM-Docker or NEMOGCM-Docker-master).
 It contains:
     - this "readme.txt" file;
     - two subdirectories "arch_XIOS" and "arch_NEMOGCM" with architecture files
