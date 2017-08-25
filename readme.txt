@@ -92,7 +92,7 @@ cd /SRC/NEMOGCM/CONFIG
 # to compile
 ./makenemo -v 3 –m DEBIAN –r GYRE -n MY_GYRE 
 # to run
-cd MYGYRE/EXP00; mpirun -np ./opa
+cd MYGYRE/EXP00; mpirun ./opa
 # at the end of the run, output files are available in the current directory
 # as well as simultaneously available on the host.
 
