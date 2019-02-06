@@ -42,7 +42,7 @@ a) Download the sources for NEMOCGM, XIOS 1.0 and XIOS 2.0 in a SRC subdirectory
 /!\ Note: with NEMO version "nemo_v3_6_STABLE", use xios-1.0 revision 703 [2].
 
 mkdir SRC; cd SRC
-svn --username 'my_login' --password 'my_password' co http://forge.ipsl.jussieu.fr/nemo/svn/branches/2015/nemo_v3_6_STABLE/NEMOGCM
+svn --username 'my_login' --password 'my_password' co http://forge.ipsl.jussieu.fr/nemo/svn/NEMO/releases/release-3.6/NEMOGCM
 svn co -r 703 http://forge.ipsl.jussieu.fr/ioserver/svn/XIOS/branchs/xios-1.0 xios-1.0
 svn co -r 990 http://forge.ipsl.jussieu.fr/ioserver/svn/XIOS/trunk xios-2.0
 
