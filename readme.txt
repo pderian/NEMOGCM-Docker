@@ -57,7 +57,7 @@ ln -s xios-2.0 XIOS #to use XIOS 2.0
 
 c) Copy the architecture files.
 
-cd ..; cp arch_NEMOGCM/arch* SRC/NEMOGCM/ARCH; cp arch_XIOS/arch* SRC/XIOS/ARCH
+cd ..; cp arch_NEMOGCM/arch* SRC/NEMOGCM/ARCH; cp arch_XIOS/arch* SRC/XIOS/arch
 
 ----------------
 2. Build the Debian image.
